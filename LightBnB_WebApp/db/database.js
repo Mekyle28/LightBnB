@@ -122,10 +122,10 @@ const getAllProperties = function(options, limit = 10) {
   if (options.owner_id) {
     queryParams.push(options.owner_id);
     if (queryParams.length === 1) {
-      queryString += `WHERE owner_id LIKE $${queryParams.length} `;
+      queryString += `WHERE owner_id = $${queryParams.length} `;
     }
     if (queryParams.length > 1) {
-      queryString += `AND owner_id IS $${queryParams.length} `;
+      queryString += `AND owner_id = $${queryParams.length} `;
     }
   }
 
